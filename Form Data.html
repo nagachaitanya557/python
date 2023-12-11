@@ -1,0 +1,77 @@
+{% include "sidebar5.html" %}
+<html>
+   
+    <style>
+       
+        h2{
+            background-color: #6b6bf1;
+            color: aliceblue;
+            width: 245%;
+            
+        }
+        thead{
+            background-color: #6b6bf1;
+            color: aliceblue;
+            font-size: 20px;
+        }
+        tbody{
+            background-color: blanchedalmond;
+        }
+        body
+        {
+            background-color: #6b6bf1;
+        }
+    </style>
+    <body>
+        <br>
+        <section class="home-section">
+        <h2><div class="tracking-in-contract-bck-bottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Form Table</div></h2><br>
+         <a href="/biographform/"><button class="btn btn-lg btn-secondary">ADD</button></a>
+        <table class="table table-bordered">
+            <tr>
+                <thead>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Content</th>
+                <th>Point1</th>
+                <th>Point2</th>
+                <th>Point3</th>
+                <th>Point4</th>
+                <th>Content1</th>
+                <th>Video</th>
+                <th>Content2</th>
+                <th>Point5</th>
+                <th>Point6</th>
+                <th>Content3</th>
+                <th>Image</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            </tr>
+            {% for i in a %}
+            <tr>
+                <tbody>
+                <td><img src="/media/{{i.image}}" width="auto" height="auto"></td>
+                <td>{{i.name}}</td>
+                <td>{{i.content}}</td>
+                <td>{{i.point1}}</td>
+                <td>{{i.point2}}</td>
+                <td>{{i.point3}}</td>
+                <td>{{i.point4}}</td>
+                <td>{{i.content1}}</td>
+                <td><iframe width="560" height="315" src="{{i.video}}"  allowfullscreen></iframe></td>
+                <td>{{i.content2}}</td>
+                <td>{{i.point5}}</td>
+                <td>{{i.point6}}</td>
+                <td>{{i.content3}}</td>
+                <td><img src="/media/{{i.image1}}" width="auto" height="auto"></td>
+                <td><a href="/graphedit/{{i.id}}"><center><i class="fa fa-pencil" aria-hidden="true" style="font-size: 30px;"></i></center></a></td>
+                <td><a href="/graphdelete/{{i.id}}"><center><i class="fa fa-trash" aria-hidden="true" style="color: red; font-size: 30px;"></center></a></td>
+           </tbody>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </section>
+    </body>
+</html>
